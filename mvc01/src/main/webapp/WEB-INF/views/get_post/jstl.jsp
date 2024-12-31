@@ -16,8 +16,8 @@
 		<c:if test="${ list.size() != 0 }">
 			<c:forEach var="d" items="${ list }">
 				<tr>
-					<td>${ list[0].name }</td>
-					<td>${ list[0].age }</td>
+					<td>${ d.name }</td>
+					<td>${ d.age }</td>
 				</tr>
 			</c:forEach>
 			
