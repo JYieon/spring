@@ -35,10 +35,21 @@ public class MemberController {
 	}
 	
 	@PostMapping("register")
-	public String register(MemberDTO d) {
-		
+	public String register(MemberDTO d) {	
 		ms.setList(d);
-		
+		return "redirect:test";
+		//return "forward:test";
+	}
+	
+	@GetMapping("test")
+	public String test() {
+		System.out.println("get방식 test실행");
+		return "/member/main";
+	}
+	
+	@PostMapping("test")
+	public String test2() {
+		System.out.println("post방식 test실행");
 		return "/member/main";
 	}
 	
@@ -49,6 +60,12 @@ public class MemberController {
 		model.addAttribute("member", list);
 		
 		return "/member/list";
+	}
+	
+	@GetMapping("abc")
+	public String abc() {
+		//중간에 무언가 연산 후 목록으로 이동시켜줌
+		return "redirect:list";
 	}
 	
 }
